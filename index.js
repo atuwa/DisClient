@@ -44,6 +44,12 @@ server.listen(port, function() {
 input_port.parentNode.removeChild(input_port);
 var port_text=document.getElementById("port_text");
 port_text.parentNode.removeChild(port_text);
+
+var input_memo=document.getElementById("input_memo");
+input_memo.parentNode.removeChild(input_memo);
+var setMemo=document.getElementById("setMemo");
+setMemo.parentNode.removeChild(setMemo);
+
     var input_area = document.getElementById("input_area");
 
     client.on("ready", () => {
