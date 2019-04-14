@@ -1,9 +1,17 @@
-﻿const Discord = require('discord.js');
+const Discord = require('discord.js');
 const client = new Discord.Client();
 
 console.log("test!")
 document.getElementById("submit").addEventListener("click", main, false);
-
+/*
+var remote = require('remote');
+var argv = remote.process.argv;
+if(argv.length>0)document.getElementById("input_port").value=argv[0];
+if(argv.length>1)document.getElementById("input_atuwaBouyomi").value=argv[1];
+if(argv.length>2)document.getElementById("input_atuwaBouyomiP").value=argv[2];
+if(argv.length>3)document.getElementById("input_area").value=argv[3];
+if(argv.length>4)document.getElementById("input").innerHTML=argv[4];
+*/
 var express = require('express');
 var server= express();
 url = require('url');
@@ -57,7 +65,7 @@ setMemo.parentNode.removeChild(setMemo);
         input_area.value = "";
     });
     client.login(input_area.value);
-    client.on('message', msg => {
+    client.on('message', msg => {//メッセージ受け取り
         console.log("<Discord> " + msg.content);
 //        if (msg.content === 'ping') {
 //            msg.reply('pong');
@@ -67,6 +75,7 @@ setMemo.parentNode.removeChild(setMemo);
 //            msg.reply("だめ");
 //        }
     });
+    client.on('error', console.error);
 };
 
 function boot_client(){
